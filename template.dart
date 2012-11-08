@@ -43,7 +43,7 @@ class Template{
         result = result.replaceAll('{{${tags[key].name}}}', value);
       }
      });
-    }catch(Exception e){
+    }on Exception catch(e) {
       completer.completeException(e);
     }
     Futures.wait(futuresPending).then(onComplete(List futureResults){
