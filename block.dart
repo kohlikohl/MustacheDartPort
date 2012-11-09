@@ -29,9 +29,9 @@ class Block {
           iterationContent = iterationContent.replaceAll('{{${tags[key].name}}}', value);
         }
       });if(count == 0){
-        result.concat(iterationContent);
+        result = result.concat(iterationContent);
       }else{
-        result.concat(iterationContent);
+        result = result.concat(iterationContent);
       }
       count++;
     });
