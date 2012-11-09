@@ -17,7 +17,7 @@ class Block {
     int count = 0;
     data.forEach((Map currentMap){
       iterationContent = content;
-      currentMap.forEach((String key, Dynamic value){
+      currentMap.forEach((String key, dynamic value){
         //iterationContent = result;
         if(value is List){
           //print('found a list');
@@ -29,9 +29,9 @@ class Block {
           iterationContent = iterationContent.replaceAll('{{${tags[key].name}}}', value);
         }
       });if(count == 0){
-        result += '$iterationContent';
+        result.concat(iterationContent);
       }else{
-        result += '\n$iterationContent';
+        result.concat(iterationContent);
       }
       count++;
     });
@@ -96,7 +96,7 @@ class Block {
   Directory fileDirectory;
   Map<String, Block> blocks;
   Map<String, Tag> tags;
-  Map<String, Dynamic> blockMap;
+  Map<String, dynamic> blockMap;
   String content;
   String sourceField;
 }

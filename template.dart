@@ -18,7 +18,7 @@ class Template{
     String result = content;
     List futuresPending = new List();
     try{
-     data.forEach((String key, Dynamic value){
+     data.forEach((String key, dynamic value){
       if(value is List){
         //print('found a list in template');
         String blockRenderResult = blocks[key].render(value);
